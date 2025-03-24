@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIXED 
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\pagestyle{empty}
+\setlength{\parskip}{0.25\baselineskip}
+\renewcommand{\title}[1]{{\noindent\large\bfseries#1\medskip\\}}
+\renewcommand{\author}[2]{{\noindent #1 \medskip\\ \small #2 \medskip\\}}
+\renewcommand\refname{}
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Projecting possible future trajectories for systems of cities}
+\author{
+% Authors Names
+Juste Raimbault,\textsuperscript{1,2,3,4}
+Denise Pumain,\textsuperscript{4}
+}
+{
+% Authors Affiliations
+1. LaSTIG, Univ. Gustave Eiffel, IGN-ENSG\\
+2. CASA, UCL\\
+3. UPS CNRS 3611 ISC-PIF\\
+4. UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\
+}
+
+
+% mini abstract 2000 caracs
+% 
+
+% ABSTRACT
+
+Designing sustainable policies for territorial systems requires an approach encompassing both generic processes and geographical peculiarities of diverse urban systems across the world, in a multi-level way \cite{rozenblat2018conclusion},% TODO relire - pas sur que suggere simu models -> cite book chapter handbook entropy?
+which can further be quantified through simulation models for systems of cities \cite{raimbault2021spatial}. An evolutionary theory of urban systems 
+
+Methods for exploring various contingencies in such simulation models have been developed in close link to the validation of these models: the MARIUS model family coupling population growth with economic exchanges \cite{} has been challenged into ``unexpected'' behaviours with the Pattern Space Exploration algorithm \cite{cherel2015beyond}. Similarly, the SimpopNet model for the co-evolution of transportation infrastructure networks and cities  ... \cite{raimbault2020unveiling}
+
+We build in this contribution on these previously developed models and exploration methods \cite{raimbault2019methods}, to introduce a new composite method for projecting possible future plausible trajectories for a system of cities. 
+\cite{raimbault2020indirect} %showed that a set of parameter points
+
+% We first calibrate the full macroscopic model (all submodels included) on population trajectories, providing a range of possible parametrisations having produced the past dynamics, with the points on the Pareto front (bi-objective calibration on log(MSE) - MSE(log);
+%From these optimal points, extract parameter boundaries and consider these as the most probable values;
+%Use these parameter bounds to run the PSE diversity search algorithms, on dynamics a few time steps in the future to obtain the universe of possibilities, what quantifies possible regimes (in the case of a high dimensional output space or a high number of trajectories, it is interpreted as adaptability [?] - a restricted future implies less adaptability)
+
+Our method is applied to the European and Chinese system of cities, using harmonised datasets for population trajectories of cities constructed by \cite{cura2017old}, and in particular the ChinaCities database \cite{swerts2017data}.
+
+Simulation results are shown in Figure 1.
+% TODO find a specific representation, with incertitude tubes, for population, and other SDG dimensions? or radar plot, how the system evolves on it? or most important dim only and project? -> emissions, GDP? ~ ! possible that with such a high dimensionality the model can tell anything - finding trajs with PSE (then how to be sure to remove bias in visu or interpretation?)
+
+
+
+\newpage
+
+
+\begin{figure}%[b]
+  \centering
+  %\includegraphics[width=\textwidth]{figures/}
+  \caption{}
+\end{figure}
+
+{\small
+%\linespread{1}\selectfont
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+}
+
+\end{document}
+
+
+
+
+%\bigskip
+%{\small
+%\noindent[1] Here you can add references.\\
+%\noindent[2] Differently from this one, not written using a LLM.
+%}
+
+%\begin{figure}[b]
+%  \centering
+%  \includegraphics[width=0.5\textwidth]{figure.pdf}
+%  \caption{Figure caption.}
+%\end{figure}
+
