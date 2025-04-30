@@ -15,7 +15,7 @@
 \title{Projecting possible future trajectories for systems of cities}
 \author{
 % Authors Names
-Juste Raimbault,\textsuperscript{1,2,3,4}
+Juste Raimbault,\textsuperscript{1,2,3,4, $\ast$}
 Denise Pumain,\textsuperscript{4}
 }
 {
@@ -24,45 +24,38 @@ Denise Pumain,\textsuperscript{4}
 2. CASA, UCL\\
 3. UPS CNRS 3611 ISC-PIF\\
 4. UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\
+$\ast$ Presenting author\\
 }
 
 
-% mini abstract 2000 caracs
-% 
-
-% ABSTRACT
-
-Designing sustainable policies for territorial systems requires an approach encompassing both generic processes and geographical peculiarities of diverse urban systems across the world, in a multi-level way \cite{rozenblat2018conclusion},% TODO relire - pas sur que suggere simu models -> cite book chapter handbook entropy?
-which can further be quantified through simulation models for systems of cities \cite{raimbault2021spatial}. An evolutionary theory of urban systems 
-
-Methods for exploring various contingencies in such simulation models have been developed in close link to the validation of these models: the MARIUS model family coupling population growth with economic exchanges \cite{} has been challenged into ``unexpected'' behaviours with the Pattern Space Exploration algorithm \cite{cherel2015beyond}. Similarly, the SimpopNet model for the co-evolution of transportation infrastructure networks and cities  ... \cite{raimbault2020unveiling}
-
-We build in this contribution on these previously developed models and exploration methods \cite{raimbault2019methods}, to introduce a new composite method for projecting possible future plausible trajectories for a system of cities. 
-\cite{raimbault2020indirect} %showed that a set of parameter points
-
-% We first calibrate the full macroscopic model (all submodels included) on population trajectories, providing a range of possible parametrisations having produced the past dynamics, with the points on the Pareto front (bi-objective calibration on log(MSE) - MSE(log);
-%From these optimal points, extract parameter boundaries and consider these as the most probable values;
-%Use these parameter bounds to run the PSE diversity search algorithms, on dynamics a few time steps in the future to obtain the universe of possibilities, what quantifies possible regimes (in the case of a high dimensional output space or a high number of trajectories, it is interpreted as adaptability [?] - a restricted future implies less adaptability)
-
-Our method is applied to the European and Chinese system of cities, using harmonised datasets for population trajectories of cities constructed by \cite{cura2017old}, and in particular the ChinaCities database \cite{swerts2017data}.
-
-Simulation results are shown in Figure 1.
 % TODO find a specific representation, with incertitude tubes, for population, and other SDG dimensions? or radar plot, how the system evolves on it? or most important dim only and project? -> emissions, GDP? ~ ! possible that with such a high dimensionality the model can tell anything - finding trajs with PSE (then how to be sure to remove bias in visu or interpretation?)
 
 
 
-\newpage
+% abstract long 400-800 words
 
+% Special session 6 : validation of spatial simulation models
 
-\begin{figure}%[b]
-  \centering
-  %\includegraphics[width=\textwidth]{figures/}
-  \caption{}
-\end{figure}
+\vspace{-1cm}
+\noindent
+\textit{\textbf{Submission to ECTQG 2025 - Special Session 6: Validation of Spatial Simulation Models}}
+
+\vspace{1cm}
+
+Designing sustainable policies for territorial systems requires an approach encompassing both generic processes and geographical peculiarities of diverse urban systems across the world, in a multi-level way \cite{rozenblat2018conclusion}. This can be achieved using simulation models for systems of cities \cite{raimbault2021spatial}. An evolutionary theory of urban systems has been developed to that end the last 30 years \cite{pumain1997pour, pumain2017urban}, in parallel to several simulation models for systems of cities \cite{pumain2011multi}. Methods for exploring various contingencies in such simulation models have been developed in close link to the validation of these models: for example the MARIUS model family coupling population growth with economic exchanges has been challenged into ``unexpected'' behaviours with the Pattern Space Exploration (PSE) algorithm \cite{cherel2015beyond}. Similarly, the SimpopNet model for the co-evolution of transportation infrastructure networks and cities has been generalised into a synthetic setup by \cite{raimbault2020unveiling} to compute its sensitivity to the spatial configuration \cite{raimbault2019space}.
+
+We build in this contribution on such validation methods \cite{raimbault2019methods}, to introduce a new composite method for projecting possible future plausible trajectories in simulation models for system of cities. Given a simulation model which can be calibrated on real world data, the method proceeds in three steps: (i) calibrate the model with specified objectives (in practice we follow \cite{raimbault2020indirect} and use two dimension capturing errors on population trajectories, what produces large sets of solution across Pareto fronts); (ii) from the set of solutions, extract parameter values to obtain plausible parameter ranges for past trajectories; (iii) run the PSE diversity search algorithm on dynamic trajectories a few time steps in the future with the previously obtained parameter bounds.
+
+Our method is applied to a multi-model introduced by \cite{raimbault2022trade} combining several dimensions of urban interactions (infrastructure, economics, innovation) and computing many indicators for Sustainable Development Goals (up to five indicators \cite{raimbault2024simulation}). This model is calibrated on population trajectories but can be used to study sustainability issues including proxies for emissions and inequalities, in a very stylised way. We run the model with this model for the European and Chinese system of cities, using harmonised datasets for population trajectories of cities constructed by \cite{cura2017old}, and in particular the ChinaCities database \cite{swerts2017data}.
+
+First results show that the method is well suited to project future trajectories, with a ensemble of plausible trajectories obtained and the most probable one. In that sense, it provides an alternative to ensemble model approaches or Bayesian approaches. For the systems studied and population trajectories, we obtain less uncertainty in parameters for Europe compared to China, and therefore much broader potential futures for China. 
+
+Future work includes (i) the calibration on other dimensions than population, in particular innovation and emissions, to allow a robust interpretability of output future trajectories for these dimensions; (ii) the use of more realistic submodel couplings to include interactions between dimensions (for example innovation reducing emissions); (iii) test of the method with other simulation models and comparison with similar methods.
+
 
 {\small
 %\linespread{1}\selectfont
-\bibliographystyle{unsrt}
+\bibliographystyle{apalike}
 \bibliography{biblio}
 }
 
