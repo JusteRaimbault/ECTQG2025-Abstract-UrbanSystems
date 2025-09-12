@@ -205,7 +205,7 @@ Combination of existing model exploration methods to project future potential tr
 \footnotesize
 
 
-\textbf{Models integrated by \cite{raimbault2024simulation} (benchmarked by \cite{raimbault2020empowering} to fit population dynamics on several large urban systems): }
+\textbf{Models integrated by \cite{raimbault2024simulation} (benchmarked by \cite{raimbault2020empowering} on several large urban systems): }
 
 \begin{itemize}
 	\item Innovation diffusion urban evolution model \cite{raimbault2022trade}
@@ -213,7 +213,7 @@ Combination of existing model exploration methods to project future potential tr
 	\item Co-evolution model for cities and infrastructure networks \cite{raimbault2021modeling}
 \end{itemize}
 
-\bigskip
+\smallskip
 
 \textbf{``Semi-weak'' coupling of submodels:}
 
@@ -224,7 +224,7 @@ S_0 \rightarrow \left[ S_1^{(0)} = M_0 (S_0) \rightarrow \ldots \rightarrow S_1^
 \longrightarrow \left[ S_{T}^{(0)} = M_0 (S_{T - 1}) \rightarrow \ldots \rightarrow S_T^{(K - 1)} = M_{K - 1} (S_T^{(K - 2)}) = S_T \right]
 \end{multline}
 
-\medskip
+\smallskip
 
 \textbf{Remarks: } strictly weak coupling does not capture dynamics nor synergies; stronger coupling may exist to better capture interdependencies processes (here no specific coupling ontology, only population and distance matrix are shared between submodels)
 
@@ -370,29 +370,81 @@ $\rightarrow$ integration into the OpenMOLE model exploration open source softwa
 \sframe{Application}{
 %We run the model with this model for the European and Chinese system of cities, using harmonised datasets for population trajectories of cities constructed by \cite{cura2017old}, and in particular the ChinaCities database \cite{swerts2017data}.
 
+\footnotesize
+
 \begin{itemize}
-	\item Apply the method to the multi-model, on Europe with the GeoDivercity harmonised data (\cite{cura2017old}, and the ChinaCities database \cite{swerts2017data})
-	\item Calibrate on population trajectories only (Mean Square Error on log of populations and log of Mean Square Error), $\simeq 1960 - 2010$
+	\item Apply the method to the multi-model, on Europe and China with the GeoDivercity harmonised data (\cite{cura2017old}, and the ChinaCities database \cite{swerts2017data})
+	\item Calibrate on population trajectories only (Mean Square Error on log of populations and log of Mean Square Error), $\simeq 1960 - 2010$; optimisation parameters:  8 parameters for innovation, 7 parameters for economic exchanges, 6 parameters for co-evolution;
 	\item Project trajectories on 3 time steps after 2010, until 2040
-	\item PSE objectives (6 dimensions): average of log(population) (2020, 2030, 2040) and standard deviation of log(population) (2020, 2030, 2040)
-	\item 
+	\item PSE objectives (6 dimensions): average of log(population) (2020, 2030, 2040) and standard deviation of log(population) (2020, 2030, 2040);
+	\item Compute SDGs indicators for the projected trajectories: total utility of innovations (SDG 9 ``Innovation'', total spatial interaction flows across submodels (SDG 13 ``Climate''), average distance between cities (SDG 9 ``Resilient infrastructure''); economic inequalities (SDG 10 ``Inequalities''); total wealth of cities (SDG 8 ``Economic Growth'').
 \end{itemize}
 
 }
 
-\sframe{}{
+\sframe{Results: EU calibration}{
 
-%First results show that the method is well suited to project future trajectories, with a ensemble of plausible trajectories obtained and the most probable one. In that sense, it provides an alternative to ensemble model approaches or Bayesian approaches. For the systems studied and population trajectories, we obtain less uncertainty in parameters for Europe compared to China, and therefore much broader potential futures for China. 
+
+\begin{center}
+	\includegraphics[width=0.9\linewidth]{../../../../Results/FutureTrajectories/CALIBRATION_EU_LOCAL_20250911_182514/pareto_color-innovationInnovationDecay.png}
+\end{center}
+
+}
+
+\sframe{Results: EU calibration parameters}{
+
+%  For the systems studied and population trajectories, we obtain less uncertainty in parameters for Europe compared to China, and therefore much broader potential futures for China. 
+
+\begin{center}
+	\includegraphics[width=\linewidth]{../../../../Results/FutureTrajectories/CALIBRATION_EU_LOCAL_20250911_182514/params-standardised-distribs.png}
+\end{center}
 
 }
 
 
-\sframe{}{
+\sframe{Results: ZH calibration}{
 
-
+\begin{center}
+	\includegraphics[width=0.9\linewidth]{../../../../Results/FutureTrajectories/CALIBRATION_CN_LOCAL_20250911_204557//pareto_color-innovationInnovationDecay.png}
+\end{center}
 
 }
 
+\sframe{Results: ZH calibration parameters}{
+
+\begin{center}
+	\includegraphics[width=\linewidth]{../../../../Results/FutureTrajectories/CALIBRATION_CN_LOCAL_20250911_204557//params-standardised-distribs.png}
+\end{center}
+
+$\rightarrow$ broader bounds for ZH (1 order of magnitude for innovationn and economic weight for example), meaning much broader potential futures.
+
+}
+
+
+
+\sframe{Results: PSE on projected trajectories for EU}{
+
+%First results show that the method is well suited to project future trajectories, with a ensemble of plausible trajectories obtained and the most probable one. In that sense, it provides an alternative to ensemble model approaches or Bayesian approaches.
+
+\begin{center}
+	\includegraphics[width=0.45\linewidth]{../../../../Results/FutureTrajectories/PSE_EU_LOCAL_20250912_090708/population_trajectories.png}
+	\includegraphics[width=0.45\linewidth]{../../../../Results/FutureTrajectories/PSE_EU_LOCAL_20250912_090708/sdgs_gravityFlows-oppAverageUtility_color-giniEconomicWealth.png}
+\end{center}
+
+}
+
+
+\sframe{Results: PSE on projected trajectories for ZH}{
+
+
+\begin{center}
+	\includegraphics[width=0.45\linewidth]{../../../../Results/FutureTrajectories/PSE_CN_LOCAL_20250912_070937/population_trajectories.png}
+	\includegraphics[width=0.45\linewidth]{../../../../Results/FutureTrajectories/PSE_CN_LOCAL_20250912_070937/sdgs_gravityFlows-oppAverageUtility_color-giniEconomicWealth.png}
+\end{center}
+
+$\rightarrow$ confirmed much broader feasible trajectory space for Chinese urban system
+
+}
 
 
 
@@ -410,25 +462,29 @@ $\rightarrow$ integration into the OpenMOLE model exploration open source softwa
 
 \textbf{Contributions: }
 \begin{itemize}
-	\item 
+	\item A new method to project possible future urban systems trajectories
+	\item First calibration of the multi-model of simulation for urban systems sustainability
+	\item Under the stationarity assumption, broader urban futures for China vs EU
 \end{itemize}
 
-%\textbf{Work in progress: }
-%\begin{itemize}
-%	\item 
-%\end{itemize}
 
 \smallskip
 
 \textbf{Perspectives: }
 
 \begin{itemize}
-	\item 
+	\item Calibration on other dimensions (e.g. innovation and emissions) for robustness of SDGs trajectories
+	\item Stronger coupling between submodels
+	\item Test of the method on simpler simulation models and benchmark with similar methods
 \end{itemize}
 
 \smallskip
 
-\textbf{Code and data: } \url{}
+\textbf{Code and data: }
+
+Model \url{https://github.com/openmole/spatialdata}
+
+Method and results \url{https://github.com/JusteRaimbault/SDGTradoffs}
 
 }
 
